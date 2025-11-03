@@ -1,1 +1,576 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
+namespace CursoWindowsForms
+{
+    public partial class Frm_DemonstracaoKey : Form
+    {
+        public Frm_DemonstracaoKey()
+        {
+            InitializeComponent();
+        }
+
+        private void Txt_Input_KeyDown(object sender, KeyEventArgs e)
+        {
+            Txt_Msg.AppendText("\r\n" + "Pressionei uma tecla: " + e.KeyCode + "\r\n");
+            Txt_Msg.AppendText("\t" + "Código da tecla: " + ((int)e.KeyCode) + "\r\n");
+            Txt_Msg.AppendText("\t" + "Nome da tecla: " + e.KeyData + "\r\n");
+            Lbl_Lower.Text = e.KeyCode.ToString().ToLower();
+            Lbl_Upper.Text = e.KeyCode.ToString().ToUpper();
+        }
+
+        private void Btn_Reset_Click(object sender, EventArgs e)
+        {
+            Txt_Msg.Text = "";
+            Txt_Input.Text = "";
+            Lbl_Upper.Text = "";
+            Lbl_Lower.Text = "";
+
+        }
+    }
+}
+﻿namespace CursoWindowsForms
+{
+    partial class Frm_DemonstracaoKey
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Txt_Input = new System.Windows.Forms.TextBox();
+            this.Txt_Msg = new System.Windows.Forms.TextBox();
+            this.Btn_Reset = new System.Windows.Forms.Button();
+            this.Lbl_Minus = new System.Windows.Forms.Label();
+            this.Lbl_Maius = new System.Windows.Forms.Label();
+            this.Lbl_Upper = new System.Windows.Forms.Label();
+            this.Lbl_Lower = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // Txt_Input
+            // 
+            this.Txt_Input.Location = new System.Drawing.Point(8, 8);
+            this.Txt_Input.Name = "Txt_Input";
+            this.Txt_Input.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Input.TabIndex = 0;
+            this.Txt_Input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Input_KeyDown);
+            // 
+            // Txt_Msg
+            // 
+            this.Txt_Msg.Location = new System.Drawing.Point(8, 40);
+            this.Txt_Msg.Multiline = true;
+            this.Txt_Msg.Name = "Txt_Msg";
+            this.Txt_Msg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Txt_Msg.Size = new System.Drawing.Size(304, 232);
+            this.Txt_Msg.TabIndex = 1;
+            this.Txt_Msg.TabStop = false;
+            // 
+            // Btn_Reset
+            // 
+            this.Btn_Reset.Location = new System.Drawing.Point(328, 8);
+            this.Btn_Reset.Name = "Btn_Reset";
+            this.Btn_Reset.Size = new System.Drawing.Size(75, 28);
+            this.Btn_Reset.TabIndex = 2;
+            this.Btn_Reset.Text = "Limpa";
+            this.Btn_Reset.UseVisualStyleBackColor = true;
+            this.Btn_Reset.Click += new System.EventHandler(this.Btn_Reset_Click);
+            // 
+            // Lbl_Minus
+            // 
+            this.Lbl_Minus.AutoSize = true;
+            this.Lbl_Minus.Location = new System.Drawing.Point(320, 104);
+            this.Lbl_Minus.Name = "Lbl_Minus";
+            this.Lbl_Minus.Size = new System.Drawing.Size(38, 13);
+            this.Lbl_Minus.TabIndex = 3;
+            this.Lbl_Minus.Text = "Minus.";
+            // 
+            // Lbl_Maius
+            // 
+            this.Lbl_Maius.AutoSize = true;
+            this.Lbl_Maius.Location = new System.Drawing.Point(320, 56);
+            this.Lbl_Maius.Name = "Lbl_Maius";
+            this.Lbl_Maius.Size = new System.Drawing.Size(38, 13);
+            this.Lbl_Maius.TabIndex = 4;
+            this.Lbl_Maius.Text = "Maius.";
+            // 
+            // Lbl_Upper
+            // 
+            this.Lbl_Upper.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbl_Upper.Location = new System.Drawing.Point(368, 56);
+            this.Lbl_Upper.Name = "Lbl_Upper";
+            this.Lbl_Upper.Size = new System.Drawing.Size(32, 23);
+            this.Lbl_Upper.TabIndex = 5;
+            // 
+            // Lbl_Lower
+            // 
+            this.Lbl_Lower.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbl_Lower.Location = new System.Drawing.Point(368, 104);
+            this.Lbl_Lower.Name = "Lbl_Lower";
+            this.Lbl_Lower.Size = new System.Drawing.Size(32, 23);
+            this.Lbl_Lower.TabIndex = 6;
+            // 
+            // Frm_DemonstracaoKey
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(409, 281);
+            this.Controls.Add(this.Lbl_Lower);
+            this.Controls.Add(this.Lbl_Upper);
+            this.Controls.Add(this.Lbl_Maius);
+            this.Controls.Add(this.Lbl_Minus);
+            this.Controls.Add(this.Btn_Reset);
+            this.Controls.Add(this.Txt_Msg);
+            this.Controls.Add(this.Txt_Input);
+            this.Name = "Frm_DemonstracaoKey";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Demonstração Evento Key";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox Txt_Input;
+        private System.Windows.Forms.TextBox Txt_Msg;
+        private System.Windows.Forms.Button Btn_Reset;
+        private System.Windows.Forms.Label Lbl_Minus;
+        private System.Windows.Forms.Label Lbl_Maius;
+        private System.Windows.Forms.Label Lbl_Upper;
+        private System.Windows.Forms.Label Lbl_Lower;
+    }
+}
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CursoWindowsForms
+{
+    public partial class Frm_HelloWorld : Form
+    {
+        public Frm_HelloWorld()
+        {
+            InitializeComponent();
+        }
+
+        private void Btn_Sair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Btn_ModificaLabel_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = Txt_ConteudoLabel.Text;
+        }
+    }
+}
+﻿namespace CursoWindowsForms
+{
+    partial class Frm_HelloWorld
+    {
+        /// <summary>
+        /// Variável de designer necessária.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpar os recursos que estão sendo usados.
+        /// </summary>
+        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código gerado pelo Windows Form Designer
+
+        /// <summary>
+        /// Método necessário para suporte ao Designer - não modifique 
+        /// o conteúdo deste método com o editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.Btn_Sair = new System.Windows.Forms.Button();
+            this.Btn_ModificaLabel = new System.Windows.Forms.Button();
+            this.Txt_ConteudoLabel = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.Location = new System.Drawing.Point(30, 30);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(213, 19);
+            this.lbl_Titulo.TabIndex = 0;
+            this.lbl_Titulo.Text = "Visual Studio .NET Version";
+            // 
+            // Btn_Sair
+            // 
+            this.Btn_Sair.Location = new System.Drawing.Point(250, 265);
+            this.Btn_Sair.Name = "Btn_Sair";
+            this.Btn_Sair.Size = new System.Drawing.Size(150, 23);
+            this.Btn_Sair.TabIndex = 1;
+            this.Btn_Sair.Text = "Fechar a aplicação";
+            this.Btn_Sair.UseVisualStyleBackColor = true;
+            this.Btn_Sair.Click += new System.EventHandler(this.Btn_Sair_Click);
+            // 
+            // Btn_ModificaLabel
+            // 
+            this.Btn_ModificaLabel.Location = new System.Drawing.Point(34, 52);
+            this.Btn_ModificaLabel.Name = "Btn_ModificaLabel";
+            this.Btn_ModificaLabel.Size = new System.Drawing.Size(209, 23);
+            this.Btn_ModificaLabel.TabIndex = 2;
+            this.Btn_ModificaLabel.Text = "Modifica Texto do Label";
+            this.Btn_ModificaLabel.UseVisualStyleBackColor = true;
+            this.Btn_ModificaLabel.Click += new System.EventHandler(this.Btn_ModificaLabel_Click);
+            // 
+            // Txt_ConteudoLabel
+            // 
+            this.Txt_ConteudoLabel.Location = new System.Drawing.Point(34, 81);
+            this.Txt_ConteudoLabel.Name = "Txt_ConteudoLabel";
+            this.Txt_ConteudoLabel.Size = new System.Drawing.Size(311, 20);
+            this.Txt_ConteudoLabel.TabIndex = 3;
+            // 
+            // Frm_HelloWorld
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(412, 300);
+            this.Controls.Add(this.Txt_ConteudoLabel);
+            this.Controls.Add(this.Btn_ModificaLabel);
+            this.Controls.Add(this.Btn_Sair);
+            this.Controls.Add(this.lbl_Titulo);
+            this.Name = "Frm_HelloWorld";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Hello World";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lbl_Titulo;
+        private System.Windows.Forms.Button Btn_Sair;
+        private System.Windows.Forms.Button Btn_ModificaLabel;
+        private System.Windows.Forms.TextBox Txt_ConteudoLabel;
+    }
+}
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CursoWindowsForms
+{
+    public partial class Frm_ValidaSenha : Form
+    {
+
+        bool VerSenhaTxt = false;
+
+        public Frm_ValidaSenha()
+        {
+            InitializeComponent();
+        }
+
+        private void Btn_Reset_Click(object sender, EventArgs e)
+        {
+            Txt_Senha.Text = "";
+            Lbl_Resultado.Text = "";
+        }
+
+        private void Txt_Senha_KeyDown(object sender, KeyEventArgs e)
+        {
+            ChecaForcaSenha verifica = new ChecaForcaSenha();
+            ChecaForcaSenha.ForcaDaSenha forca;
+            forca = verifica.GetForcaDaSenha(Txt_Senha.Text);
+            Lbl_Resultado.Text = forca.ToString();
+
+            if (Lbl_Resultado.Text == "Inaceitavel" | Lbl_Resultado.Text == "Fraca")
+            {
+                Lbl_Resultado.ForeColor = Color.Red;
+            }
+            if (Lbl_Resultado.Text == "Aceitavel")
+            {
+                Lbl_Resultado.ForeColor = Color.Blue;
+            }
+            if (Lbl_Resultado.Text == "Forte" | Lbl_Resultado.Text == "Segura")
+            {
+                Lbl_Resultado.ForeColor = Color.Green;
+            }
+
+        }
+
+        private void Btn_VerSenha_Click(object sender, EventArgs e)
+        {
+            if (VerSenhaTxt == false)
+            {
+                Txt_Senha.PasswordChar = '\0';
+                VerSenhaTxt = true;
+                Btn_VerSenha.Text = "Esconder Senha";
+            }
+            else
+            {
+                Txt_Senha.PasswordChar = '*';
+                VerSenhaTxt = false;
+                Btn_VerSenha.Text = "Ver Senha";
+            }
+           
+
+        }
+    }
+
+    public class ChecaForcaSenha
+    {
+
+        public enum ForcaDaSenha
+        {
+            Inaceitavel,
+            Fraca,
+            Aceitavel,
+            Forte,
+            Segura
+        }
+
+        public int geraPontosSenha(string senha)
+        {
+            if (senha == null) return 0;
+            int pontosPorTamanho = GetPontoPorTamanho(senha);
+            int pontosPorMinusculas = GetPontoPorMinusculas(senha);
+            int pontosPorMaiusculas = GetPontoPorMaiusculas(senha);
+            int pontosPorDigitos = GetPontoPorDigitos(senha);
+            int pontosPorSimbolos = GetPontoPorSimbolos(senha);
+            int pontosPorRepeticao = GetPontoPorRepeticao(senha);
+            return pontosPorTamanho + pontosPorMinusculas + pontosPorMaiusculas + pontosPorDigitos + pontosPorSimbolos - pontosPorRepeticao;
+        }
+
+        private int GetPontoPorTamanho(string senha)
+        {
+            return Math.Min(10, senha.Length) * 7;
+        }
+
+        private int GetPontoPorMinusculas(string senha)
+        {
+            int rawplacar = senha.Length - Regex.Replace(senha, "[a-z]", "").Length;
+            return Math.Min(2, rawplacar) * 5;
+        }
+
+        private int GetPontoPorMaiusculas(string senha)
+        {
+            int rawplacar = senha.Length - Regex.Replace(senha, "[A-Z]", "").Length;
+            return Math.Min(2, rawplacar) * 5;
+        }
+
+        private int GetPontoPorDigitos(string senha)
+        {
+            int rawplacar = senha.Length - Regex.Replace(senha, "[0-9]", "").Length;
+            return Math.Min(2, rawplacar) * 6;
+        }
+
+        private int GetPontoPorSimbolos(string senha)
+        {
+            int rawplacar = Regex.Replace(senha, "[a-zA-Z0-9]", "").Length;
+            return Math.Min(2, rawplacar) * 5;
+        }
+
+        private int GetPontoPorRepeticao(string senha)
+        {
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"(\w)*.*\1");
+            bool repete = regex.IsMatch(senha);
+            if (repete)
+            {
+                return 30;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+
+        public ForcaDaSenha GetForcaDaSenha(string senha)
+        {
+            int placar = geraPontosSenha(senha);
+
+            if (placar < 50)
+                return ForcaDaSenha.Inaceitavel;
+            else if (placar < 60)
+                return ForcaDaSenha.Fraca;
+            else if (placar < 80)
+                return ForcaDaSenha.Aceitavel;
+            else if (placar < 100)
+                return ForcaDaSenha.Forte;
+            else
+                return ForcaDaSenha.Segura;
+        }
+    }
+
+}
+﻿namespace CursoWindowsForms
+{
+    partial class Frm_ValidaSenha
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Txt_Senha = new System.Windows.Forms.TextBox();
+            this.Lbl_Resultado = new System.Windows.Forms.Label();
+            this.Btn_Reset = new System.Windows.Forms.Button();
+            this.Btn_VerSenha = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Txt_Senha
+            // 
+            this.Txt_Senha.Location = new System.Drawing.Point(12, 45);
+            this.Txt_Senha.Name = "Txt_Senha";
+            this.Txt_Senha.PasswordChar = '*';
+            this.Txt_Senha.Size = new System.Drawing.Size(218, 20);
+            this.Txt_Senha.TabIndex = 0;
+            this.Txt_Senha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Senha_KeyDown);
+            // 
+            // Lbl_Resultado
+            // 
+            this.Lbl_Resultado.AutoSize = true;
+            this.Lbl_Resultado.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Resultado.Location = new System.Drawing.Point(12, 90);
+            this.Lbl_Resultado.Name = "Lbl_Resultado";
+            this.Lbl_Resultado.Size = new System.Drawing.Size(0, 22);
+            this.Lbl_Resultado.TabIndex = 1;
+            // 
+            // Btn_Reset
+            // 
+            this.Btn_Reset.Location = new System.Drawing.Point(245, 42);
+            this.Btn_Reset.Name = "Btn_Reset";
+            this.Btn_Reset.Size = new System.Drawing.Size(111, 23);
+            this.Btn_Reset.TabIndex = 2;
+            this.Btn_Reset.Text = "Limpa";
+            this.Btn_Reset.UseVisualStyleBackColor = true;
+            this.Btn_Reset.Click += new System.EventHandler(this.Btn_Reset_Click);
+            // 
+            // Btn_VerSenha
+            // 
+            this.Btn_VerSenha.Location = new System.Drawing.Point(245, 71);
+            this.Btn_VerSenha.Name = "Btn_VerSenha";
+            this.Btn_VerSenha.Size = new System.Drawing.Size(111, 23);
+            this.Btn_VerSenha.TabIndex = 3;
+            this.Btn_VerSenha.Text = "Ver Senha";
+            this.Btn_VerSenha.UseVisualStyleBackColor = true;
+            this.Btn_VerSenha.Click += new System.EventHandler(this.Btn_VerSenha_Click);
+            // 
+            // Frm_ValidaSenha
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(368, 154);
+            this.Controls.Add(this.Btn_VerSenha);
+            this.Controls.Add(this.Btn_Reset);
+            this.Controls.Add(this.Lbl_Resultado);
+            this.Controls.Add(this.Txt_Senha);
+            this.Name = "Frm_ValidaSenha";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Validação de Senha";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox Txt_Senha;
+        private System.Windows.Forms.Label Lbl_Resultado;
+        private System.Windows.Forms.Button Btn_Reset;
+        private System.Windows.Forms.Button Btn_VerSenha;
+    }
+}
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CursoWindowsForms
+{
+    static class Program
+    {
+        /// <summary>
+        /// Ponto de entrada principal para o aplicativo.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Frm_ValidaSenha());
+        }
+    }
+}
